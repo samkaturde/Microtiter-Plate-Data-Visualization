@@ -29,7 +29,7 @@ const Heatmap = () => {
           <h2>Heatmap</h2>
           <label>
             Select Metric:
-            <select className='dropdown' value={selectedMetric} onChange={handleMetricChange}>
+            <select style={{ marginBottom: '20px'}} className='dropdown' value={selectedMetric} onChange={handleMetricChange}>
               {Object.keys(data[0] || {}).slice(1).map((key) => (
                 <option key={key} value={key}>
                   {key}
