@@ -1,5 +1,4 @@
-// src/components/Heatmap.js
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect, useMemo } from 'react';
 import { Tooltip } from 'react-tooltip';
 import { DataContext } from '../contexts/DataContext';
 import HeatmapContent from "../components/HeatmapContent";
@@ -18,8 +17,23 @@ const Heatmap = () => {
   };
 
   const getColor = (value) => {
-    const hue = (1 - value) * 240;
-    return `hsl(${hue}, 100%, 50%)`;
+    const initialVal = (1 - value) * 240;
+    return `hsl(${initialVal}, 100%, 50%)`;
+  };
+
+  const DropdownElement = ({ data }) => {
+    const selectElement = useMemo(() => {
+      return (
+        <select style={{ marginBottom: '20px'}} className='dropdown' value={selectedMetric} onChange={handleMetricChange}>
+          {Object.keys(data[0] || {}).slice(1).map((key) => (
+            <option key={key} value={key}>
+              {key}
+            </option>
+          ))}
+        </select>
+      )
+    }, [data]);
+    return selectElement
   };
 
   return (
@@ -29,15 +43,8 @@ const Heatmap = () => {
           <h2>Heatmap</h2>
           <label>
             Select Metric:
-            <select style={{ marginBottom: '20px'}} className='dropdown' value={selectedMetric} onChange={handleMetricChange}>
-              {Object.keys(data[0] || {}).slice(1).map((key) => (
-                <option key={key} value={key}>
-                  {key}
-                </option>
-              ))}
-            </select>
+            <DropdownElement data={data} />
           </label>
-          <br/>
           <HeatmapContent 
             getColor={getColor} 
             selectedMetric={selectedMetric} 

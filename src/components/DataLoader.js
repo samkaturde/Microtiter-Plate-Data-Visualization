@@ -1,4 +1,3 @@
-// src/components/DataLoader.js
 import React, { useContext } from 'react';
 import Papa from 'papaparse';
 import { DataContext } from '../contexts/DataContext';
@@ -20,7 +19,7 @@ const DataLoader = () => {
 
   return (
     <div>
-      <h2>Upload CSV File</h2>
+      <h2>Upload CSV File : </h2>
       <input type="file" accept=".csv" onChange={handleFileUpload} />
     </div>
   );
