@@ -1,12 +1,9 @@
 # Microtiter Plate Data Visualization
+## Dependancy : You should have docker install on your machine and should be running
 
 ## Available Scripts
 
 In the project directory, you can run:
-
-## Dependancy :
-  You should have docker install on your machine and should be running
-
 ### Step 1. `docker build -t react-heatmap-app .`
 
 Run above command to create docker image with name "react-heatmap-app"
