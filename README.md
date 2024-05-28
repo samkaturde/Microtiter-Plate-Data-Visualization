@@ -1,6 +1,6 @@
 # Microtiter Plate Data Visualization
 ## Dependancy : You should have docker install on your machine and should be running
-
+## Note : I have added one test.csv file in public folder for your reference, you can use it or you can upload another .csv file as well. 
 ## Available Scripts
 
 In the project directory, you can run:
