@@ -14,6 +14,9 @@ Open http://localhost/ to view it in your browser.
 
 ## Available Scripts without Docker
 
+### Step 1. `npm install`
+Run above command to install all dependancies.
+
 ### Step 1. `npm start`
 Run above command to run application.
 Open http://localhost:3000 to view it in your browser.
